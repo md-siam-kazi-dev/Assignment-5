@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github Login</title>
+    <link rel="icon" type="image/png" href="./assets/github-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/output.css">
+    <style>
+        body{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="flex justify-center items-center min-h-screen">
+    <div class="login-div w-full sm:w-8/10 p-8 max-w-[520px] mx-auto shadow-[0_0_5px_rgba(0,0,0,0.1)] rounded-md ">
+        <div class="logo-section mb-6 w-full text-center">
+            <img src="./assets/github-logo.png" class="mx-auto">
+            <h3 class="text-2xl font-semibold mt-6">GitHub Issues Tracker</h3>
+            <p class="text-[16px] text-[#64748B]">Sign in to manage your issues</p>
+
+        </div>
+        <form id="form">
+          <legend class="fieldset-legend font-medium">Username</legend>
+  <input type="text" class="input mb-1.5 w-full" placeholder="Type here" /><br>
+  <p class="label text-blue-600 mb-4">Default:admin</p>
+  <legend class="fieldset-legend font-medium">Password</legend>
+  <input type="password" class="input w-full" placeholder="Type here"/>
+  <br>
+  <p class="label text-blue-600">Default:admin123</p>  
+  
+        <button type="submit" class="btn btn-primary w-full mt-6 font-medium text-[16px]">Sign in</button>
+        </form>
+        
+    </div>
+
+
+    <script src="./script/main.js"></script>
 </body>
 </html>
