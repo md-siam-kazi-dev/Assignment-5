@@ -9,23 +9,23 @@ const renderLabels = (labels) => {
     let x;
 
     if (label === "documentation") {
-      x = `<div class="rounded-full text-[12px] font-medium bg-gray-300 w-fit ">
+      x = `<div class="rounded-full text-[12px] font-medium bg-gray-300 p-0.5 w-fit ">
             <i class="fa-solid fa-file"></i> ${label.toUpperCase()}
          </div>`;
     } else if (label === "enhancement") {
-      x = `<div class="rounded-full text-[12px] font-medium bg-blue-300 w-fit ">
+      x = `<div class="rounded-full p-0.5 text-[12px] font-medium bg-blue-300 w-fit ">
             <i class="fa-solid fa-arrow-turn-up"></i> ${label.toUpperCase()}
          </div>`;
     } else if (label === "bug") {
-      x = `<div class="rounded-full text-[12px] font-medium bg-red-300 w-fit ">
+      x = `<div class="rounded-full text-[12px] font-medium bg-red-300 p-0.5 w-fit ">
             <i class="fa-solid fa-bug"></i> ${label.toUpperCase()}
          </div>`;
     } else if (label === "help wanted") {
-      x = `<div class="rounded-full text-[12px] font-medium bg-yellow-500 w-fit ">
+      x = `<div class="rounded-full p-0.5 text-[12px] font-medium bg-yellow-500 w-fit ">
             <i class="fa-solid fa-hands-helping"></i> ${label.toUpperCase()}
          </div>`;
     } else if (label === "good first issue") {
-      x = `<div class="rounded-full text-[12px] font-medium bg-green-300 w-fit ">
+      x = `<div class="rounded-full text-[12px] font-medium p-0.5 bg-green-300 w-fit ">
             <i class="fa-solid fa-heart"></i> ${label.toUpperCase()}
          </div>`;
     }
