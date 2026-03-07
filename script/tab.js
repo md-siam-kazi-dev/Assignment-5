@@ -1,7 +1,7 @@
 document.getElementById('tab').addEventListener('click' ,(evt) => {
     
-    if(evt.target.classList.contains('btn')){
-        document.querySelectorAll('.btn').forEach(btn => {
+    if(evt.target.classList.contains('tab-btn')){
+        document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('btn-primary')
     })
         if(evt.target.id === 'all'){
