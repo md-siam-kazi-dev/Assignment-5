@@ -37,11 +37,11 @@ const renderLabels = (labels) => {
 const renderIssueCard = (issues) => {
   let html = "";
   issues.forEach((issue) => {
-    let x = `<div class="issue-card shadow rounded-2xl border-t-5  ${issue.status === "open" ? "border-t-green-600" : "border-t-blue-700"}">
+    let x = `<div id='card-${issue.id}' class="issue-card  shadow rounded-2xl border-t-5  ${issue.status === "open" ? "border-t-green-600" : "border-t-blue-700"}">
                 <div class="ic-first border-b-1 border-b-[#ddd] w-full p-4">
                     <div class="ic-heading w-full flex justify-between items-center mb-3">
                         <img src="./assets/${issue.status === "open" ? "Open-Status.png" : "c.png"}" class="w-6 h-6">
-                        <div class="px-6 py-2 bg-[#FEECEC] rounded-full text-[14px] text-[#EF4444]">${issue.priority.toUpperCase()}</div>
+                        ${renderPriority(issue.priority)}
                     </div>
 
 
@@ -65,7 +65,7 @@ help wanted help wanted -->
                 </div>
                 <div class="ic-last p-4 text-xs text-[#64748B]">
                     <p class="mb-2">#${issue.id} ${issue.assignee != "" ? "by " + issue.assignee : ""}</p>
-                    <p>1/33/2222</p>
+                    <p>${getDate(issue.createdAt)}</p>
                 </div>
             </div>`;
     html += x;
@@ -73,6 +73,53 @@ help wanted help wanted -->
   issueContainer.innerHTML = html;
   renderIssueQ(issues.length);
 };
+
+
+
+document.getElementById('issue-card-container').addEventListener('click',async(evt)=>{
+    let card = evt.target.closest('.issue-card');
+    let idData = getId(card.id);
+    let response =await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${idData}`)
+    let data = await response.json();
+    let issue = data.data;
+    let modal = document.getElementById('modal');
+    modal.innerHTML = `<div class="modal-box">
+            <h1 class="text-2xl font-bold mb-2">${issue.title}</h1>
+
+            <div class="flex gap-2 items-center">
+                <div class="bg-green-500 p-2 rounded-full text-[12px] font-medium">Opened</div>&#9679;<p class="text-[#64748B] text-[12px]">${issue.status} by ${issue.author}</p>&#9679; <p class="text-[#64748B] text-[12px]">${getDate(issue.createdAt)}</p>
+            </div>
+
+            <div class="labels mt-6 mb-6 flex gap-1">${renderLabels(issue.labels)}</div>
+
+            <p class="text-[#64748B] mb-6 text-[16px]">${issue.description}</p>
+
+            <div class="p-4 grid grid-cols-2">
+                <div class="assign text-left">
+                    <h6 class="text-[#64748B] text-[16px] mb-1">Assignee:</h6>
+                    <h6 class="font-semibold text-black text-[16px]">${issue.author}</h6>
+                </div>
+                <div class="preority  text-left">
+                    <h6 class="text-[#64748B] text-[16px] mb-1">Priority:</h6>
+                    ${renderPriority(issue.priority)}
+                </div>
+            </div>
+
+
+            <form method="dialog" class="flex justify-end">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+            </form>
+        </div>`
+        modal.showModal();
+
+})
+
+
+
+
+
+
 
 const firstHtml = async () => {
   let response = await fetch(

@@ -41,7 +41,8 @@
                         class="shadow border-none focus:outline-none" />
                 </label>
 
-                <button class="btn btn-primary rounded py-4 px-3"><i class="fa-solid fa-plus"></i>New Issue</button>
+                <button class="btn btn-primary  rounded py-4 px-3"><i class="fa-solid fa-search"></i>Search
+                    Issue</button>
             </div>
         </div>
     </div>
@@ -79,13 +80,21 @@
         <div id="issue-card-container"
             class="w-full shadow p-6 rounded-br-md rounded-bl-md grid grid-cols-1 mx-auto sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-           <!-- issue card container generate here  -->
+            <!-- issue card container generate here  -->
 
 
         </div>
 
     </div>
-    
+
+
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="modal" class="modal p-8">
+    </dialog>
+
+
+    <script src="./script/mac.js"></script>
     <script src="./script/renderIssueQ.js"></script>
     <script src="./script/renderIssueCard.js"></script>
     <script src="./script/tab.js"></script>
