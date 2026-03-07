@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="./src/output.css">
     <style>
         body {
@@ -46,11 +46,11 @@
         </div>
     </div>
 
-    <div class="main max-w-[1110px] mx-auto w-19/20 sm:w-17/20 md:w-16/20 lg:w-15/20 mt-15">
-        <div class="tab bg-white w-full px-1 py-6 sm:px-6 shadow rounded flex justify-start gap-2">
-            <button class="btn btn-primary font-semibold w-[90px] sm:w-[120px]">All</button>
-            <button class="btn font-semibold w-[90px] sm:w-[120px]">Open</button>
-            <button class="btn font-semibold w-[90px] sm:w-[120px]">Closed</button>
+    <div class="main max-w-[1410px] mx-auto w-19/20 sm:w-17/20 md:w-16/20 lg:w-15/20 mt-15">
+        <div id="tab" class="tab bg-white w-full px-1 py-6 sm:px-6 shadow rounded flex justify-start gap-2">
+            <button id="all" class="btn btn-primary font-semibold w-[90px] sm:w-[120px]">All</button>
+            <button id="open" class="btn font-semibold w-[90px] sm:w-[120px]">Open</button>
+            <button id="closed" class="btn font-semibold w-[90px] sm:w-[120px]">Closed</button>
         </div>
 
 
@@ -77,7 +77,7 @@
 
 
         <div id="issue-card-container"
-            class="w-full shadow p-6 rounded-br-md rounded-bl-md grid grid-cols-1 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            class="w-full shadow p-6 rounded-br-md rounded-bl-md grid grid-cols-1 mx-auto sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
            <!-- issue card container generate here  -->
 
@@ -85,8 +85,10 @@
         </div>
 
     </div>
+    
     <script src="./script/renderIssueQ.js"></script>
     <script src="./script/renderIssueCard.js"></script>
+    <script src="./script/tab.js"></script>
 
 </body>
 
