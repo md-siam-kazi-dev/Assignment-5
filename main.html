@@ -26,10 +26,11 @@
                 <img src="./assets/github-logo.png" class="max-w-9 max-w-9">
                 <h3 class="text-2xl font-semibold">GitHub Issues Tracker</h3>
             </div>
+            <!-- input field html fa-hourglass-start -->
             <div class="nav-search flex items-center gap-2">
 
-
-                <label class="input">
+            
+                <label class="input border-none shadow-[0_0_5px_rgba(0,0,0,.2)] outline-none">
                     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
                             stroke="currentColor">
@@ -37,13 +38,14 @@
                             <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" required placeholder="Search issues..."
-                        class="shadow border-none focus:outline-none" />
+                    <input id="search" type="search" required placeholder="Search issues..."
+                        class=" border-none focus:outline-none" />
                 </label>
 
                 <button class="btn btn-primary  rounded py-4 px-3"><i class="fa-solid fa-search"></i>Search
                     Issue</button>
             </div>
+            <!-- input field html fa-hourglass-end -->
         </div>
     </div>
 
@@ -54,7 +56,7 @@
             <button id="closed" class="btn tab-btn font-semibold w-[90px] sm:w-[120px]">Closed</button>
         </div>
 
-
+  <!-- issue quantity div start  -->
         <div
             class="issue-container-main mt-4 border-b-[#ddd]  shadow p-6 rounded-tr-md rounded-tl-md flex flex-col md:flex-row justify-between items-start gap-4 md:items-center">
             <div class="issue-con-div flex gap-2  items-center">
@@ -75,8 +77,9 @@
                 </div>
             </div>
         </div>
+    <!-- issue quantity div end  -->
 
-
+   <!-- issue card container start  -->
         <div id="issue-card-container"
             class="w-full shadow p-6 rounded-br-md rounded-bl-md grid grid-cols-1 mx-auto sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
@@ -84,6 +87,7 @@
 
 
         </div>
+    <!-- issue card container end  -->
 
     </div>
 
@@ -93,9 +97,11 @@
     <dialog id="modal" class="modal p-8">
     </dialog>
 
+    <!-- end modal  -->
+
 
     <script src="./script/mac.js"></script>
-    <script src="./script/renderIssueQ.js"></script>
+    <script src="./script/search.js"></script>
     <script src="./script/renderIssueCard.js"></script>
     <script src="./script/tab.js"></script>
 

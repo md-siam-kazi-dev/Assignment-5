@@ -1,6 +1,9 @@
+//this js file implement tab interactivity
+
 document.getElementById('tab').addEventListener('click' ,(evt) => {
     
     if(evt.target.classList.contains('tab-btn')){
+        //remove color from tab btn 
         document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('btn-primary')
     })
@@ -15,6 +18,7 @@ document.getElementById('tab').addEventListener('click' ,(evt) => {
         }else if(evt.target.id === 'closed'){
             let closedData = allData.filter(data => data.status === 'closed');
             evt.target.classList.add('btn-primary')
+            //if user click closed then render closed issue card
             renderIssueCard(closedData);
         }
     }
