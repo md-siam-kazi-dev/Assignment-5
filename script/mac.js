@@ -72,6 +72,11 @@ help wanted help wanted -->
             </div>`;
     html += x;
   });
+  if(html === ''){
+    //sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4
+    html = `<div class="w-full h-50 flex sm:col-span-2 lg:col-span-3 xl:col-span-4 justify-center items-center font-bold text-2xl">No Issue Found!</div>`
+  }
+
   issueContainer.innerHTML = html;
   renderIssueQ(issues.length);
 };
@@ -144,4 +149,24 @@ const renderModal =(issue)=>{
                 <button class="btn">Close</button>
             </form>
         </div>`
+}
+
+
+
+
+const seachMechanizom = (responseData)=>{
+    let allBtn = document.getElementById('all');
+    let openBtn = document.getElementById('open');
+    let closedBtn = document.getElementById('closed');
+
+    if(allBtn.classList.contains('btn-primary')){
+        renderIssueCard(responseData);
+
+    }else if(openBtn.classList.contains('btn-primary')){
+        let data = responseData.filter(data => data.status === 'open');
+        renderIssueCard(data);
+    }else{
+        let data = responseData.filter(data => data.status === 'closed');
+        renderIssueCard(data);
+    }
 }

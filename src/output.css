@@ -1856,6 +1856,12 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+  .h-200 {
+    height: calc(var(--spacing) * 200);
+  }
   .h-\[1em\] {
     height: 1em;
   }
@@ -2237,6 +2243,11 @@
       outline-style: none;
     }
   }
+  .sm\:col-span-2 {
+    @media (width >= 40rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
   .sm\:w-8\/10 {
     @media (width >= 40rem) {
       width: calc(8 / 10 * 100%);
@@ -2262,6 +2273,11 @@
       padding-inline: calc(var(--spacing) * 6);
     }
   }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
   .md\:w-16\/20 {
     @media (width >= 48rem) {
       width: calc(16 / 20 * 100%);
@@ -2282,6 +2298,16 @@
       align-items: center;
     }
   }
+  .lg\:col-span-1 {
+    @media (width >= 64rem) {
+      grid-column: span 1 / span 1;
+    }
+  }
+  .lg\:col-span-3 {
+    @media (width >= 64rem) {
+      grid-column: span 3 / span 3;
+    }
+  }
   .lg\:w-15\/20 {
     @media (width >= 64rem) {
       width: calc(15 / 20 * 100%);
@@ -2290,6 +2316,16 @@
   .lg\:grid-cols-3 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .xl\:col-4 {
+    @media (width >= 80rem) {
+      grid-column: 4;
+    }
+  }
+  .xl\:col-span-4 {
+    @media (width >= 80rem) {
+      grid-column: span 4 / span 4;
     }
   }
   .xl\:grid-cols-4 {

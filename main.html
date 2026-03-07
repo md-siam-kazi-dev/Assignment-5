@@ -27,7 +27,7 @@
                 <h3 class="text-2xl font-semibold">GitHub Issues Tracker</h3>
             </div>
             <!-- input field html fa-hourglass-start -->
-            <div class="nav-search flex items-center gap-2">
+            <form id="search-form" class="nav-search flex items-center gap-2">
 
             
                 <label class="input border-none shadow-[0_0_5px_rgba(0,0,0,.2)] outline-none">
@@ -42,9 +42,9 @@
                         class=" border-none focus:outline-none" />
                 </label>
 
-                <button class="btn btn-primary  rounded py-4 px-3"><i class="fa-solid fa-search"></i>Search
+                <button type="submit" id="search-btn" class="btn btn-primary  rounded py-4 px-3"><i class="fa-solid fa-search"></i>Search
                     Issue</button>
-            </div>
+                </form>
             <!-- input field html fa-hourglass-end -->
         </div>
     </div>
