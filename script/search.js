@@ -1,6 +1,7 @@
 
 document.getElementById('search-form').addEventListener('submit',async(evt)=>{
     evt.preventDefault();
+    renderLoading(true)
     let searchValue = document.getElementById('search').value;
     if(searchValue.trim() === ''){
         searchValue.value = "";

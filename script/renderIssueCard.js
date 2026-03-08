@@ -23,6 +23,7 @@ document.getElementById('issue-card-container').addEventListener('click',async(e
 
 
 const firstHtml = async () => {
+  renderLoading(true);
   let response = await fetch(
     "https://phi-lab-server.vercel.app/api/v1/lab/issues",
   );

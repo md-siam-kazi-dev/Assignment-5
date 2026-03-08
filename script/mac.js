@@ -76,7 +76,7 @@ help wanted help wanted -->
     //sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4
     html = `<div class="w-full h-50 flex sm:col-span-2 lg:col-span-3 xl:col-span-4 justify-center items-center font-bold text-2xl">No Issue Found!</div>`
   }
-
+  renderLoading(false);
   issueContainer.innerHTML = html;
   renderIssueQ(issues.length);
 };
@@ -168,5 +168,17 @@ const seachMechanizom = (responseData)=>{
     }else{
         let data = responseData.filter(data => data.status === 'closed');
         renderIssueCard(data);
+    }
+}
+
+
+const renderLoading = (bool) =>{
+     let load = document.querySelector('.loadspin');
+    if(bool){
+        issueContainer.classList.add('hidden')
+        load.classList.remove('hidden');
+    }else{
+        issueContainer.classList.remove('hidden')
+        load.classList.add('hidden');
     }
 }
