@@ -1,8 +1,9 @@
 //this js file implement tab interactivity
 let tabBtnAll = document.querySelectorAll(".tab-btn");
 document.getElementById("tab").addEventListener("click", (evt) => {
-    renderLoading(true)
+    
   if (evt.target.classList.contains("tab-btn")) {
+    renderLoading(true)
     //remove color from tab btn
     tabBtnAll.forEach((btn) => {
       btn.classList.remove("btn-primary");
