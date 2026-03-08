@@ -32,5 +32,6 @@ const firstHtml = async () => {
   let data = await responseData.data;
   allData = data;
   renderIssueCard(data);
+  renderLoading(false);
 };
 firstHtml();
