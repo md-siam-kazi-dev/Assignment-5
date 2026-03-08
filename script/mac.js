@@ -153,6 +153,7 @@ const renderModal =(issue)=>{
 
 
 
+// this searching interactivity implentation function
 
 const seachMechanizom = (responseData)=>{
     let allBtn = document.getElementById('all');
@@ -171,7 +172,7 @@ const seachMechanizom = (responseData)=>{
     }
 }
 
-
+// render Loading icon function
 const renderLoading = (bool) =>{
      let load = document.querySelector('.loadspin');
     if(bool){

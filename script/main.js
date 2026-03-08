@@ -1,4 +1,7 @@
 let msg = document.querySelector('.msg')
+
+
+//Login page to home page function
 document.getElementById('form').addEventListener('submit',(event)=>{
     event.preventDefault();
     let userName = document.getElementById('username').value ;

@@ -3,6 +3,7 @@ let issueQ = document.getElementById("issue-quantity");
 let allData ;
 
 
+//Modal interactiviry implentaion//
 
 document.getElementById('issue-card-container').addEventListener('click',async(evt)=>{
     let card = evt.target.closest('.issue-card');
