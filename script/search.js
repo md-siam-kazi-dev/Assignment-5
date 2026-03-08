@@ -4,8 +4,9 @@ document.getElementById('search-form').addEventListener('submit',async(evt)=>{
     renderLoading(true)
     let searchValue = document.getElementById('search').value;
     if(searchValue.trim() === ''){
-        searchValue.value = "";
+        
         alert("No Search Value Entered");
+        renderLoading(false);
         return;
     }
     let response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`);
